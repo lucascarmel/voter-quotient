@@ -1,10 +1,8 @@
 import React from 'react'
-import usePlacesAutocomplete, {
-	getGeocode,
-	getLatLng,
-} from 'use-places-autocomplete'
-import useOnclickOutside from 'react-cool-onclickoutside'
-import styled from 'styled-components'
+import usePlacesAutocomplete from 'use-places-autocomplete'
+
+// import useOnclickOutside from 'react-cool-onclickoutside'
+// import styled from 'styled-components'
 
 import {
 	Combobox,
@@ -12,13 +10,9 @@ import {
 	ComboboxPopover,
 	ComboboxList,
 	ComboboxOption,
-	ComboboxOptionText,
+	// ComboboxOptionText,
 } from '@reach/combobox'
 import '@reach/combobox/styles.css'
-
-const Input = styled.input`
-	border-bottom: 2px solid;
-`
 
 const PlacesAutocomplete = () => {
 	const {
@@ -33,11 +27,11 @@ const PlacesAutocomplete = () => {
 		},
 		debounce: 300,
 	})
-	const ref = useOnclickOutside(() => {
-		// When user clicks outside of the component, we can dismiss
-		// the searched suggestions by calling this method
-		clearSuggestions()
-	})
+	// const ref = useOnclickOutside(() => {
+	// 	// When user clicks outside of the component, we can dismiss
+	// 	// the searched suggestions by calling this method
+	// 	clearSuggestions()
+	// })
 
 	const handleInput = (e) => {
 		// Update the keyword of the input element
@@ -51,14 +45,14 @@ const PlacesAutocomplete = () => {
 		clearSuggestions()
 
 		// Get latitude and longitude via utility functions
-		getGeocode({ address: description })
-			.then((results) => getLatLng(results[0]))
-			.then(({ lat, lng }) => {
-				console.log('📍 Coordinates: ', { lat, lng })
-			})
-			.catch((error) => {
-				console.log('😱 Error: ', error)
-			})
+		// getGeocode({ address: description })
+		// 	.then((results) => getLatLng(results[0]))
+		// 	.then(({ lat, lng }) => {
+		// 		console.log('📍 Coordinates: ', { lat, lng })
+		// 	})
+		// 	.catch((error) => {
+		// 		console.log('😱 Error: ', error)
+		// 	})
 	}
 
 	const renderSuggestions = () =>
@@ -85,6 +79,7 @@ const PlacesAutocomplete = () => {
 				onChange={handleInput}
 				disabled={false}
 				style={{ width: 500 }}
+				placeholder='Type Your Address'
 			/>
 			<ComboboxPopover>
 				{status === 'OK' && <ComboboxList>{renderSuggestions()} </ComboboxList>}

@@ -3,9 +3,15 @@ import axios from 'axios'
 import './App.css'
 import { group } from 'd3-array'
 
-import Header from './Header.js'
-import PlacesAutocomplete from './Input.js'
+// import Header from './Header.js'
+import PlacesAutocomplete from './AddressInput.js'
+import Lookup from './AddressLookup.js'
 // import Table from './Table.js'
+import styled from 'styled-components'
+
+const Div = styled.div`
+	display: inline-flex;
+`
 
 class App extends React.Component {
 	constructor(props) {
@@ -32,7 +38,7 @@ class App extends React.Component {
 			.then((response) => {
 				this.setState({ googleData: response.data })
 
-				let processedData = Array.from(
+				Array.from(
 					group(this.state.googleData.offices, (d) => d.name),
 					([office, value]) => ({
 						office,
@@ -58,8 +64,17 @@ class App extends React.Component {
 				<header className='App-header'>{/* <Header /> */}</header>
 				<main>
 					<h1>Voter Quotient</h1>
-					<p>A ballot guide with opinions 😏</p>
-					<PlacesAutocomplete />
+					<p>
+						A ballot guide with opinions{' '}
+						<span role='img' aria-label='Smirk Emoji'>
+							😏
+						</span>
+					</p>
+					<Div>
+						<Lookup />
+						<strong>&nbsp;&nbsp;or&nbsp;&nbsp;</strong>
+						<PlacesAutocomplete />
+					</Div>
 				</main>
 			</div>
 		)
