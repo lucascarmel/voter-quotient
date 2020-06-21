@@ -1,14 +1,17 @@
 import React from 'react'
 import axios from 'axios'
-import { group } from 'd3-array'
-// import logo from './logo.svg'
 import './App.css'
+import { group } from 'd3-array'
+
+import Header from './Header.js'
+import PlacesAutocomplete from './Input.js'
+// import Table from './Table.js'
 
 class App extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			officials: '',
+			googleData: [],
 			address: '',
 		}
 		this.handleChange = this.handleChange.bind(this)
@@ -18,88 +21,46 @@ class App extends React.Component {
 	handleChange(event) {
 		this.setState({ address: event.target.value })
 	}
+
 	handleSubmit(event) {
-		alert('A name was submitted: ' + this.state.address)
 		event.preventDefault()
 		axios
 			.get(
 				`https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyBnjLZX5HZkzTc4HOKqUrOfxNDdHtCaMNI&address=
-        ${encodeURI(this.state.address)}`
+		    ${encodeURI(this.state.address)}`
 			)
 			.then((response) => {
-				this.setState({ officials: response.data.officials })
+				this.setState({ googleData: response.data })
+
+				let processedData = Array.from(
+					group(this.state.googleData.offices, (d) => d.name),
+					([office, value]) => ({
+						office,
+						level: value[0].levels[0],
+						politicians: value[0].officialIndices.map(
+							(d) => this.state.googleData.officials[d]
+						),
+					})
+				)
 			})
 			.catch((error) => {
 				console.log(error)
 			})
 
-		Array.from(
-			group(this.state.officials, (d) => d.name),
-			([office, value]) => ({
-				office,
-				level: value[0].levels[0],
-				politicians: value[0].officialIndices.map(
-					(d) => this.state.officials[d]
-				),
-			})
-		)
-	}
-
-	componentDidMount() {
-		// axios
-		// 	.get(
-		// 		`https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyBnjLZX5HZkzTc4HOKqUrOfxNDdHtCaMNI&address=
-		//     ${encodeURI(this.state.address)}`
-		// 	)
-		// 	.then((response) => {
-		// 		console.log(response)
-		// 	})
-		// 	.catch((error) => {
-		// 		console.log(error)
-		// 	})
+		// console.log(this.state.googleData.offices.map((d) => d.name))
 	}
 
 	render() {
-		const { imageURL } = this.state
+		// console.log(this.state.googleData)
+
 		return (
 			<div className='App'>
-				<header className='App-header'>
-					<form onSubmit={this.handleSubmit}>
-						<label>
-							Your address:
-							<input
-								type='text'
-								value={this.state.address}
-								onChange={this.handleChange}
-							/>{' '}
-						</label>
-						<input type='submit' value='Submit' />
-					</form>
-					<img src={imageURL} alt='dog' />
-					{/* <img src={logo} className='App-logo' alt='logo' /> */}
-					<p>
-						Edit <code>src/App.js</code> and save to reload!
-					</p>
-					<a
-						className='App-link'
-						href='https://reactjs.org'
-						target='_blank'
-						rel='noopener noreferrer'>
-						Learn React
-					</a>
-					<table>
-						<thead>
-							<tr>
-								<th>Hello</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Duh</td>
-							</tr>
-						</tbody>
-					</table>
-				</header>
+				<header className='App-header'>{/* <Header /> */}</header>
+				<main>
+					<h1>Voter Quotient</h1>
+					<p>A ballot guide with opinions 😏</p>
+					<PlacesAutocomplete />
+				</main>
 			</div>
 		)
 	}
