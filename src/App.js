@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 // import Header from './Header.js'
 import PlacesAutocomplete from './AddressInput.js'
-import Lookup from './AddressLookup.js'
+// import Lookup from './AddressLookup.js'
 import Footer from './Footer.js'
 
 const Quote = styled.p`
