@@ -1,10 +1,28 @@
+html,
+body {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	overflow-y: hidden;
+}
+
 .App {
-	text-align: center;
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+	flex: 1 0 auto;
 }
 
 .App-logo {
 	height: 40vmin;
 	pointer-events: none;
+}
+
+main {
+	margin: 0 auto;
+	max-width: 600px;
+	padding: 1.2rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -35,4 +53,26 @@
 	to {
 		transform: rotate(360deg);
 	}
+}
+
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+	input[type='checkbox'],
+	input[type='radio'] {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+	}
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+}
+
+input {
+	border: 0;
+	outline: 0;
+	background: transparent;
+	border-bottom: 1px solid black;
+	font-size: 1.8em;
 }

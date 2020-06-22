@@ -1,82 +1,66 @@
 import React from 'react'
-import axios from 'axios'
-import './App.css'
-import { group } from 'd3-array'
+import styled from 'styled-components'
 
 // import Header from './Header.js'
 import PlacesAutocomplete from './AddressInput.js'
 import Lookup from './AddressLookup.js'
-// import Table from './Table.js'
-import styled from 'styled-components'
+import Footer from './Footer.js'
 
-const Div = styled.div`
+const Quote = styled.p`
+	font-size: 1.6em;
+	font-family: 'Spectral', Georgia, 'Times New Roman', Times, serif serif;
+	line-height: 1.2em;
+`
+
+const Heading = styled.h1`
+	font-size: 4.5em;
+	line-height: 0.9em;
+	font-family: 'IBM Plex Mono', 'Rubik', Helvetica, Arial, sans-serif;
+	margin: 2rem 0;
+	font-style: italic;
+`
+
+const DivOuter = styled.div`
 	display: inline-flex;
+	margin: 1em 0;
+`
+
+const DivInner = styled.div`
+	display: inline-flex;
+	flex-direction: row;
+	@media screen and (max-width: 768px) {
+		flex-direction: column;
+		align-items: center;
+	}
 `
 
 class App extends React.Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			googleData: [],
-			address: '',
-		}
-		this.handleChange = this.handleChange.bind(this)
-		this.handleSubmit = this.handleSubmit.bind(this)
-	}
-
-	handleChange(event) {
-		this.setState({ address: event.target.value })
-	}
-
-	handleSubmit(event) {
-		event.preventDefault()
-		axios
-			.get(
-				`https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyBnjLZX5HZkzTc4HOKqUrOfxNDdHtCaMNI&address=
-		    ${encodeURI(this.state.address)}`
-			)
-			.then((response) => {
-				this.setState({ googleData: response.data })
-
-				Array.from(
-					group(this.state.googleData.offices, (d) => d.name),
-					([office, value]) => ({
-						office,
-						level: value[0].levels[0],
-						politicians: value[0].officialIndices.map(
-							(d) => this.state.googleData.officials[d]
-						),
-					})
-				)
-			})
-			.catch((error) => {
-				console.log(error)
-			})
-
-		// console.log(this.state.googleData.offices.map((d) => d.name))
-	}
-
 	render() {
-		// console.log(this.state.googleData)
-
 		return (
-			<div className='App'>
-				<header className='App-header'>{/* <Header /> */}</header>
-				<main>
-					<h1>Voter Quotient</h1>
-					<p>
-						A ballot guide with opinions{' '}
-						<span role='img' aria-label='Smirk Emoji'>
-							😏
-						</span>
-					</p>
-					<Div>
-						<Lookup />
-						<strong>&nbsp;&nbsp;or&nbsp;&nbsp;</strong>
-						<PlacesAutocomplete />
-					</Div>
-				</main>
-			</div>
+			<body>
+				<div className='App'>
+					<main>
+						<DivOuter>
+							<Heading>
+								Voter
+								<br />
+								Quotient
+							</Heading>
+						</DivOuter>
+						<Quote>
+							Casting your vote shouldn't feel like buying a lottery ticket.
+							<i>VQ</i> is a ballot guide with the best information and honest
+							opinions.
+						</Quote>
+						<DivInner>
+							{/* <Lookup />
+							<strong>&nbsp;&nbsp;or&nbsp;&nbsp;</strong> */}
+							<PlacesAutocomplete />
+						</DivInner>
+					</main>
+				</div>
+				<Footer />
+			</body>
 		)
 	}
 }
