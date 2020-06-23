@@ -27,7 +27,7 @@ class Table extends React.Component {
 			.then((response) => {
 				this.setState({ googleData: response.data })
 
-				Array.from(
+				const cleanData = Array.from(
 					group(this.state.googleData.offices, (d) => d.name),
 					([office, value]) => ({
 						office,
@@ -37,16 +37,16 @@ class Table extends React.Component {
 						),
 					})
 				)
+
+				console.log(cleanData)
 			})
 			.catch((error) => {
 				console.log(error)
 			})
-
-		// console.log(this.state.googleData.offices.map((d) => d.name))
 	}
 
 	render() {
-		return <div></div>
+		return <div>Ok!</div>
 	}
 }
 export default Table

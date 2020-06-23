@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-// import Header from './Header.js'
-import PlacesAutocomplete from './AddressInput.js'
+// import PlacesAutocomplete from './AddressInput.js'
 // import Lookup from './AddressLookup.js'
+import Table from './AddressInput.js'
 import Footer from './Footer.js'
 
 const Quote = styled.p`
@@ -16,7 +16,7 @@ const Heading = styled.h1`
 	font-size: 4.5em;
 	line-height: 0.9em;
 	font-family: 'IBM Plex Mono', 'Rubik', Helvetica, Arial, sans-serif;
-	margin: 2rem 0;
+	/* margin: 2rem 0; */
 	font-style: italic;
 `
 
@@ -35,32 +35,42 @@ const DivInner = styled.div`
 `
 
 class App extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			address: '',
+		}
+	}
+
 	render() {
 		return (
-			<body>
+			<div>
 				<div className='App'>
 					<main>
 						<DivOuter>
 							<Heading>
-								Voter
+								Vote
 								<br />
-								Quotient
+								Against
+								<br />
+								Gridlock
 							</Heading>
 						</DivOuter>
 						<Quote>
-							Casting your vote shouldn't feel like buying a lottery ticket.
-							<i>VQ</i> is a ballot guide with the best information and honest
-							opinions.
+							Gridlock doesn't happen by accident. Change doesn't happen without
+							a fight. <i>VOG</i> is a criminal justice ballot guide that holds
+							politicians accountable.
 						</Quote>
 						<DivInner>
 							{/* <Lookup />
 							<strong>&nbsp;&nbsp;or&nbsp;&nbsp;</strong> */}
-							<PlacesAutocomplete />
+							{/* <PlacesAutocomplete /> */}
+							<Table props={this.state.address} />
 						</DivInner>
 					</main>
 				</div>
 				<Footer />
-			</body>
+			</div>
 		)
 	}
 }

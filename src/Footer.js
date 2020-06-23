@@ -1,15 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import voteLogo from './v4a_head-1_Color.png'
+import voteLogo from './v4a_head-1.jpg'
 import colanderLogo from './tinhat_america.png'
 
 const FooterDiv = styled.div`
 	display: flexbox;
 	padding: 1rem;
-	justify-content: center;
-	height: 50px;
-	margin-top: -50px;
-	flex-shrink: 0;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	/* bring your own prefixes */
+	transform: translate(-50%);
 `
 const FooterImage = styled.img`
 	margin: 0 0.5rem;

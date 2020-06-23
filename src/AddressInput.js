@@ -23,7 +23,7 @@ const StyledComboboxPopover = styled(ComboboxPopover)`
 	}
 `
 
-const PlacesAutocomplete = () => {
+const PlacesAutocomplete = (address) => {
 	const {
 		// ready,
 		value,
@@ -52,6 +52,7 @@ const PlacesAutocomplete = () => {
 		// by setting the second parameter as "false"
 		setValue(description, false)
 		clearSuggestions()
+		address = description
 
 		// Get latitude and longitude via utility functions
 		// getGeocode({ address: description })
@@ -75,9 +76,7 @@ const PlacesAutocomplete = () => {
 				<ComboboxOption
 					key={id}
 					onClick={handleSelect(suggestion)}
-					value={main_text + ', ' + secondary_text}>
-					{/* <strong>{main_text}</strong> <small>{secondary_text}</small> */}
-				</ComboboxOption>
+					value={main_text + ', ' + secondary_text}></ComboboxOption>
 			)
 		})
 
