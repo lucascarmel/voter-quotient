@@ -58,8 +58,8 @@ class App extends React.Component {
 						</DivOuter>
 						<Quote>
 							Gridlock doesn't happen by accident. Change doesn't happen without
-							a fight. <i>VOG</i> is a criminal justice ballot guide that holds
-							politicians accountable.
+							a fight. <i>Vote Against Gridlock</i> is a criminal justice ballot
+							guide that holds politicians accountable.
 						</Quote>
 						<DivInner>
 							{/* <Lookup />
