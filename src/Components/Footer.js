@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import voteLogo from './v4a_head-1.jpg'
-import colanderLogo from './tinhat_america.png'
+import voteLogo from './Icons/v4a_head-1.jpg'
+import colanderLogo from './Icons/tinhat_america.png'
 
 const FooterDiv = styled.div`
 	display: flexbox;

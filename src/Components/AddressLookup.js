@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import logo from './map-marker-alt-solid.svg'
+import logo from './Icons/map-marker-alt-solid.svg'
 
 const Button = styled.button`
 	background-color: white;

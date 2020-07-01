@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 // import PlacesAutocomplete from './AddressInput.js'
 // import Lookup from './AddressLookup.js'
-import Table from './AddressInput.js'
-import Footer from './Footer.js'
+import Table from './Components/AddressInput.js'
+import Footer from './Components/Footer.js'
 
 const Quote = styled.p`
 	font-size: 1.6em;
