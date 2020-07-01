@@ -5,7 +5,7 @@ import usePlacesAutocomplete, {
 } from 'use-places-autocomplete'
 import styled from 'styled-components'
 
-import useOnclickOutside from 'react-cool-onclickoutside'
+// import useOnclickOutside from 'react-cool-onclickoutside'
 // import styled from 'styled-components'
 
 import {
@@ -39,11 +39,11 @@ const PlacesAutocomplete = (address) => {
 		},
 		debounce: 200,
 	})
-	const ref = useOnclickOutside(() => {
-		// When user clicks outside of the component, we can dismiss
-		// the searched suggestions by calling this method
-		clearSuggestions()
-	})
+	// const ref = useOnclickOutside(() => {
+	// 	// When user clicks outside of the component, we can dismiss
+	// 	// the searched suggestions by calling this method
+	// 	clearSuggestions()
+	// })
 
 	const handleInput = (e) => {
 		// Update the keyword of the input element
