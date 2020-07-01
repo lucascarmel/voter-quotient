@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-// import { group, rollup } from 'd3-array'
+import { group, rollup } from 'd3-array'
 
 class Table extends React.Component {
 	constructor(props) {

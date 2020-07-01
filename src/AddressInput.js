@@ -1,8 +1,11 @@
 import React from 'react'
-import usePlacesAutocomplete from 'use-places-autocomplete'
+import usePlacesAutocomplete, {
+	getGeocode,
+	getLatLng,
+} from 'use-places-autocomplete'
 import styled from 'styled-components'
 
-// import useOnclickOutside from 'react-cool-onclickoutside'
+import useOnclickOutside from 'react-cool-onclickoutside'
 // import styled from 'styled-components'
 
 import {
@@ -34,13 +37,13 @@ const PlacesAutocomplete = (address) => {
 		requestOptions: {
 			/* Define search scope here */
 		},
-		debounce: 100,
+		debounce: 200,
 	})
-	// const ref = useOnclickOutside(() => {
-	// 	// When user clicks outside of the component, we can dismiss
-	// 	// the searched suggestions by calling this method
-	// 	clearSuggestions()
-	// })
+	const ref = useOnclickOutside(() => {
+		// When user clicks outside of the component, we can dismiss
+		// the searched suggestions by calling this method
+		clearSuggestions()
+	})
 
 	const handleInput = (e) => {
 		// Update the keyword of the input element
@@ -55,14 +58,14 @@ const PlacesAutocomplete = (address) => {
 		address = description
 
 		// Get latitude and longitude via utility functions
-		// getGeocode({ address: description })
-		// 	.then((results) => getLatLng(results[0]))
-		// 	.then(({ lat, lng }) => {
-		// 		console.log('📍 Coordinates: ', { lat, lng })
-		// 	})
-		// 	.catch((error) => {
-		// 		console.log('😱 Error: ', error)
-		// 	})
+		getGeocode({ address: description })
+			.then((results) => getLatLng(results[0]))
+			.then(({ lat, lng }) => {
+				console.log('📍 Coordinates: ', { lat, lng })
+			})
+			.catch((error) => {
+				console.log('😱 Error: ', error)
+			})
 	}
 
 	const renderSuggestions = () =>
@@ -81,31 +84,34 @@ const PlacesAutocomplete = (address) => {
 		})
 
 	return (
-		<Combobox onSelect={handleSelect}>
-			<ComboboxInput
-				value={value}
-				onChange={handleInput}
-				placeholder='type your address'
-				style={{ border: 'none' }}
-			/>
-			<StyledComboboxPopover portal={false}>
-				{status === 'OK' && status.length > 0 ? (
-					<ComboboxList>{renderSuggestions()} </ComboboxList>
-				) : (
-					<p
-						style={{
-							margin: 0,
-							color: '#454545',
-							padding: '0.2rem 0.5rem 0.5rem 0.5rem',
-						}}>
-						<span aria-label='embaressed face emoji' role='img'>
-							😳
-						</span>
-						&nbsp;&nbsp;We couldn't find that address! Please try another.
-					</p>
-				)}
-			</StyledComboboxPopover>
-		</Combobox>
+		<div>
+			<Combobox onSelect={handleSelect}>
+				<ComboboxInput
+					value={value}
+					onChange={handleInput}
+					placeholder='type your address'
+					style={{ border: 'none' }}
+				/>
+				<StyledComboboxPopover portal={false}>
+					{status === 'OK' && status.length > 0 ? (
+						<ComboboxList>{renderSuggestions()} </ComboboxList>
+					) : (
+						<p
+							style={{
+								margin: 0,
+								color: '#454545',
+								padding: '0.2rem 0.5rem 0.5rem 0.5rem',
+							}}>
+							<span aria-label='embaressed face emoji' role='img'>
+								😳
+							</span>
+							&nbsp;&nbsp;We couldn't find that address! Please try another.
+						</p>
+					)}
+				</StyledComboboxPopover>
+			</Combobox>
+			{/* <h2>Your location is: (`{latLng}`</h2> */}
+		</div>
 	)
 }
 
