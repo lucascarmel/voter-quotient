@@ -1,3 +1,9 @@
+# Vote 4 Change
+_Vote 4 Change_ is a criminal justice ballot guide that holds politicians accountable.
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
