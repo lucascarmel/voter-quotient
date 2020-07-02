@@ -15,19 +15,10 @@ const Button = styled.button`
 `
 
 const Lookup = () => {
-	// constructor(props) {
-	// 	super(props)
-	// 	this.state = {}
-	// }
-
 	navigator.geolocation.getCurrentPosition(function (position) {
 		console.log('Latitude is :', position.coords.latitude)
 		console.log('Longitude is :', position.coords.longitude)
 	})
-
-	// const getLoc = () => {
-
-	// }
 
 	const renderLoc = () => {
 		return (
@@ -41,11 +32,10 @@ const Lookup = () => {
 
 	return (
 		<div>
-			<Button onClick={Lookup}>
+			<Button onClick={(Lookup, renderLoc)}>
 				Use Current Location{' '}
 				<img src={logo} alt='Logo' width='20' height='20' />
 			</Button>
-			{renderLoc}
 		</div>
 	)
 }

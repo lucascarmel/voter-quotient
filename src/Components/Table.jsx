@@ -2,16 +2,16 @@ import React from 'react'
 import axios from 'axios'
 import { group, rollup } from 'd3-array'
 
-class Table extends React.Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			googleData: [],
-			address: '',
-		}
-		this.handleChange = this.handleChange.bind(this)
-		this.handleSubmit = this.handleSubmit.bind(this)
-	}
+const Table = (lat, lng) => {
+	// constructor(props) {
+	// 	super(props)
+	// 	this.state = {
+	// 		googleData: [],
+	// 		address: '',
+	// 	}
+	// 	this.handleChange = this.handleChange.bind(this)
+	// 	this.handleSubmit = this.handleSubmit.bind(this)
+	// }
 
 	handleChange(event) {
 		this.setState({ address: event.target.value })
@@ -44,9 +44,6 @@ class Table extends React.Component {
 				console.log(error)
 			})
 	}
-
-	render() {
-		return <div>Ok!</div>
-	}
+	return(<div>cleanData</div>)
 }
 export default Table

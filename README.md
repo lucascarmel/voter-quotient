@@ -1,34 +1,35 @@
 # Vote 4 Change
+
 _Vote 4 Change_ is a criminal justice ballot guide that holds politicians accountable.
 
 ## Project Structure
 
 ```
 .
-├── build
-├── node_modules                        
-├── public    
+├── public/
 │   ├── apiKey
 │   ├── index.html
 │   ├── favicon.ico
 │   ├── manifest.json
 │   ├── robots.txt
 |   └── ...
-│   
-├── src               
+│
+├── src/
 │   ├── App
-│   │   ├── App.js  
+│   │   ├── App.js
 │   │   └── App.css
-│   ├── Components     
+│   ├── Components
 │   │   └── ...
-│   ├── APIs        
+│   ├── APIs
 │   │   └── ...
 │   ├── Images
-│   │   ├──       
+│   │   ├──
 │   │   └── ...
 │   └── Index
-│       ├── Index.js   
-│       └── App.css    
+│       ├── Index.js
+│       └── App.css
+├── README.md
+├── package.json
 └── ...
 ```
 
@@ -36,26 +37,26 @@ _Vote 4 Change_ is a criminal justice ballot guide that holds politicians accoun
 
 _Make sure to familiarize yourself with these tools before contributing._
 
-
-### The Stack
+### 📚 The Stack
 
 - [React](https://reactjs.org/) for our front-end.
 - [Axios](https://github.com/axios/axios) for making API calls.
 - [Styled Components](https://styled-components.com/) for styling components.
 - [D3 Array](https://github.com/d3/d3-array) for manipulating the API response.
 
-### Keep in Mind
+### 🏴‍☠️ The Hooks
 
-- This web app uses [Custom Hooks](https://reactjs.org/docs/hooks-custom.html). No more classes here!
-  - [usePlacesAutocomplete](https://github.com/wellyshen/use-places-autocomplete) by Welly Shen is one we use the most!
+- This web app uses [Custom Hooks](https://reactjs.org/docs/hooks-custom.html). No classes here! He
+  - [usePlacesAutocomplete](https://github.com/wellyshen/use-places-autocomplete) by Welly Shen. Welly's feature rich Hook for the Google Maps API is easy to use and saves money!
+  - [SWR](https://github.com/vercel/swr) by Vercel. Short for `stale-while-revalidate`, SWR is the easiest way to fetch data in React.
 
 ### Web API's
+
 <!-- TODO: add api instructions -->
 
-
 ## Demployment
-<!-- TODO: add deployment instructions -->
 
+<!-- TODO: add deployment instructions -->
 
 Netlify!
 
@@ -126,4 +127,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-

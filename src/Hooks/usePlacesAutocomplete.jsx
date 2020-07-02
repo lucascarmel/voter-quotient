@@ -1,13 +1,10 @@
-import React from 'react'
+import React from // KeyboardEvent
+'react'
 import usePlacesAutocomplete, {
 	getGeocode,
 	getLatLng,
 } from 'use-places-autocomplete'
-import styled from 'styled-components'
-
-// import useOnclickOutside from 'react-cool-onclickoutside'
-// import styled from 'styled-components'
-
+import useOnclickOutside from 'react-cool-onclickoutside'
 import {
 	Combobox,
 	ComboboxInput,
@@ -18,17 +15,8 @@ import {
 } from '@reach/combobox'
 import '@reach/combobox/styles.css'
 
-const StyledComboboxPopover = styled(ComboboxPopover)`
-	font-size: 1.6em;
-
-	@media screen and (max-width: 600px) {
-		font-size: 1em;
-	}
-`
-
 const PlacesAutocomplete = (address) => {
 	const {
-		// ready,
 		value,
 		suggestions: { status, data },
 		setValue,
@@ -39,16 +27,22 @@ const PlacesAutocomplete = (address) => {
 		},
 		debounce: 200,
 	})
-	// const ref = useOnclickOutside(() => {
-	// 	// When user clicks outside of the component, we can dismiss
-	// 	// the searched suggestions by calling this method
-	// 	clearSuggestions()
-	// })
+	const ref = useOnclickOutside(() => {
+		// When user clicks outside of the component, we can dismiss
+		// the searched suggestions by calling this method
+		clearSuggestions()
+	})
 
 	const handleInput = (e) => {
 		// Update the keyword of the input element
 		setValue(e.target.value)
 	}
+
+	// const checkEnter = (e, suggestion) => {
+	// 	if (e.charCode === 13) {
+	// 		handleSelect(suggestion)
+	// 	}
+	// }
 
 	const handleSelect = ({ description }) => () => {
 		// When user selects a place, we can replace the keyword without request data from API
@@ -79,39 +73,40 @@ const PlacesAutocomplete = (address) => {
 				<ComboboxOption
 					key={id}
 					onClick={handleSelect(suggestion)}
-					value={main_text + ', ' + secondary_text}></ComboboxOption>
+					// use suggestion when "enter" is pressed
+					// onKeyPress={checkEnter(e, suggestion)}
+					value={main_text + ' ' + secondary_text}>
+					{/* <ComboboxOptionText /> */}
+				</ComboboxOption>
 			)
 		})
 
 	return (
-		<div>
-			<Combobox onSelect={handleSelect}>
-				<ComboboxInput
-					value={value}
-					onChange={handleInput}
-					placeholder='type your address'
-					style={{ border: 'none' }}
-				/>
-				<StyledComboboxPopover portal={false}>
-					{status === 'OK' && status.length > 0 ? (
-						<ComboboxList>{renderSuggestions()} </ComboboxList>
-					) : (
-						<p
-							style={{
-								margin: 0,
-								color: '#454545',
-								padding: '0.2rem 0.5rem 0.5rem 0.5rem',
-							}}>
-							<span aria-label='embaressed face emoji' role='img'>
-								😳
-							</span>
-							&nbsp;&nbsp;We couldn't find that address! Please try another.
-						</p>
-					)}
-				</StyledComboboxPopover>
-			</Combobox>
-			{/* <h2>Your location is: (`{latLng}`</h2> */}
-		</div>
+		<Combobox onSelect={handleSelect} ref={ref}>
+			<ComboboxInput
+				value={value}
+				onChange={handleInput}
+				placeholder='type your address'
+				style={{ border: 'none', borderBottom: 'solid 2px' }}
+			/>
+			<ComboboxPopover portal={false}>
+				{status === 'OK' && status.length > 0 ? (
+					<ComboboxList persistSelection>{renderSuggestions()} </ComboboxList>
+				) : (
+					<p
+						style={{
+							margin: 0,
+							color: '#454545',
+							padding: '0.2rem 0.5rem 0.5rem 0.5rem',
+						}}>
+						<span aria-label='embaressed face emoji' role='img'>
+							😳
+						</span>
+						&nbsp;&nbsp;We couldn't find that address! Please try another.
+					</p>
+				)}
+			</ComboboxPopover>
+		</Combobox>
 	)
 }
 
