@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-
-import PlacesAutocomplete from '../Hooks/usePlacesAutocomplete.jsx'
+// import PlacesAutocomplete from '../Hooks/usePlacesAutocomplete.jsx'
 // import Lookup from './Components/AddressLookup.js'
 // import Table from './Components/AddressInput.js'
 import Footer from '../Components/Footer.jsx'
-
-const Quote = styled.p`
-	font-size: 1.6em;
-	font-family: 'Spectral', Georgia, 'Times New Roman', Times, serif serif;
-	line-height: 1.2em;
-`
+import Demo from '../Components/Demo.jsx'
+import {
+	Grommet,
+	Box,
+	Button,
+	Collapsible,
+	ResponsiveContext,
+	Layer,
+} from 'grommet'
+import { Notification } from 'grommet-icons'
 
 const Heading = styled.h1`
 	font-size: 6em;
@@ -19,45 +22,46 @@ const Heading = styled.h1`
 	/* margin: 2rem 0; */
 	font-style: italic;
 `
-
-const DivOuter = styled.div`
-	display: inline-flex;
-	margin: 1em 0;
-`
-
-const DivInner = styled.div`
-	display: inline-flex;
-	flex-direction: row;
-	@media screen and (max-width: 768px) {
-		flex-direction: column;
-		align-items: center;
-	}
-`
+const theme = {
+	global: {
+		// colors: {
+		// 	brand: '#228BE6',
+		// },
+		font: {
+			family: 'IBM Plex Mono',
+			size: '14px',
+			height: '20px',
+		},
+	},
+	accordion: {
+		icons: { color: { dark: 'blue', light: 'red' } },
+		// panel: { border: 'dashed' },
+	},
+}
 
 const App = () => {
+	const [showSidebar, setShowSidebar] = useState(false)
+
 	return (
-		<div>
-			<div className='App'>
-				<main>
-					<DivOuter>
-						<Heading>Vote-4-Change</Heading>
-					</DivOuter>
-					<Quote>
-						Gridlock doesn't happen by accident. <br />
-						Change doesn't happen without a fight. <br />
-						<br />
-						<i>Vote-4-Change</i> is a criminal justice ballot guide that holds
-						politicians accountable.
-					</Quote>
-					<DivInner>
-						{/* <Lookup />
-						<strong>&nbsp;&nbsp;or&nbsp;&nbsp;</strong> */}
-						<PlacesAutocomplete />
-					</DivInner>
-				</main>
-			</div>
-			<Footer />
-		</div>
+		<Grommet theme={theme} full themeMode='dark'>
+			<ResponsiveContext.Consumer>
+				{(size) => (
+					<Box fill>
+						<Box direction='column' flex overflow={{ horizontal: 'hidden' }}>
+							<Box flex align='center' justify='top'>
+								<Heading>Know Your Vote</Heading>
+								<Demo />
+								{/* <Lookup />
+						<PlacesAutocomplete /> */}
+							</Box>
+							<Box flex direction='row' align='center' justify='center'>
+								{/* <Footer /> */}
+							</Box>
+						</Box>
+					</Box>
+				)}
+			</ResponsiveContext.Consumer>
+		</Grommet>
 	)
 }
 

@@ -7,27 +7,26 @@ _Vote 4 Change_ is a criminal justice ballot guide that holds politicians accoun
 ```
 .
 ├── public/
-│   ├── apiKey
 │   ├── index.html
 │   ├── favicon.ico
+│   ├── apiKeys.json
 │   ├── manifest.json
 │   ├── robots.txt
 |   └── ...
-│
 ├── src/
-│   ├── App
-│   │   ├── App.js
-│   │   └── App.css
 │   ├── Components
 │   │   └── ...
-│   ├── APIs
+│   ├── Hooks
 │   │   └── ...
-│   ├── Images
-│   │   ├──
+│   ├── Icons
 │   │   └── ...
-│   └── Index
-│       ├── Index.js
-│       └── App.css
+│   ├── Utils
+│   │   └── ...
+|   ├── App
+│   │   ├── App.js
+│   │   └── App.css
+│   ├── Index.js
+│   └── Index.css
 ├── README.md
 ├── package.json
 └── ...
