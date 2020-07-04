@@ -1,23 +1,20 @@
 import React from 'react'
-import styled from 'styled-components'
+import { Header, Layer } from 'grommet'
+import AddressInput from '../Components/AddressInput.jsx'
+import { Sun } from 'grommet-icons'
 
-const OuterDiv = styled.div`
-	border-bottom: 2px solid;
-	width: 100vw;
-	display: inline-flex;
-	justify-content: space-between;
-`
-
-const InnerDiv = styled.div`
-	display: inline-flex;
-`
-
-const Header = () => {
+const HeaderDiv = () => {
 	return (
-		<OuterDiv>
-			Home
-			<InnerDiv>Methodology About</InnerDiv>
-		</OuterDiv>
+		<Header
+			pad='xsmall'
+			justify='left'
+			border='bottom'
+			background={{ dark: 'black', light: 'white' }}>
+			<b>Your Address:</b>
+			<AddressInput />
+			{/* <Moon />
+			<Sun /> */}
+		</Header>
 	)
 }
-export default Header
+export default HeaderDiv

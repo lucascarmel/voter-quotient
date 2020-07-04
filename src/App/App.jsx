@@ -1,19 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 // import PlacesAutocomplete from '../Hooks/usePlacesAutocomplete.jsx'
 // import Lookup from './Components/AddressLookup.js'
 // import Table from './Components/AddressInput.js'
-import Footer from '../Components/Footer.jsx'
+import FooterDiv from '../Components/Footer.jsx'
+import HeaderDiv from '../Components/Header.jsx'
+import SocialDiv from '../Components/Social.jsx'
+
 import Demo from '../Components/Demo.jsx'
 import {
 	Grommet,
 	Box,
-	Button,
-	Collapsible,
 	ResponsiveContext,
-	Layer,
+	Main,
+	// Layer,
 } from 'grommet'
-import { Notification } from 'grommet-icons'
+import VoteTheme from '../Utils/voteTheme.json'
 
 const Heading = styled.h1`
 	font-size: 6em;
@@ -40,25 +42,25 @@ const theme = {
 }
 
 const App = () => {
-	const [showSidebar, setShowSidebar] = useState(false)
+	// const [showSidebar, setShowSidebar] = useState(false)
 
 	return (
-		<Grommet theme={theme} full themeMode='dark'>
+		<Grommet theme={VoteTheme} full themeMode='light'>
 			<ResponsiveContext.Consumer>
 				{(size) => (
-					<Box fill>
+					<Main fill>
+						<HeaderDiv />
 						<Box direction='column' flex overflow={{ horizontal: 'hidden' }}>
 							<Box flex align='center' justify='top'>
 								<Heading>Know Your Vote</Heading>
+								<SocialDiv />
 								<Demo />
 								{/* <Lookup />
 						<PlacesAutocomplete /> */}
 							</Box>
-							<Box flex direction='row' align='center' justify='center'>
-								{/* <Footer /> */}
-							</Box>
+							<FooterDiv />
 						</Box>
-					</Box>
+					</Main>
 				)}
 			</ResponsiveContext.Consumer>
 		</Grommet>

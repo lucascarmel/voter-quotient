@@ -1,5 +1,5 @@
 import React from 'react'
-import { Accordion, AccordionPanel, Box, Avatar, Heading, Text } from 'grommet'
+import { Accordion, AccordionPanel, Box, Avatar, Text } from 'grommet'
 import EliPlay from '../Icons/eli-fun.jpg'
 import EliWork from '../Icons/eli-serious.jpg'
 
