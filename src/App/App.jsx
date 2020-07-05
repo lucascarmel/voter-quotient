@@ -1,7 +1,7 @@
 import React from 'react'
 import FooterDiv from '../Components/Footer.jsx'
 import HeaderDiv from '../Components/Header.jsx'
-import SocialDiv from '../Components/Social.jsx'
+// import SocialDiv from '../Components/Social.jsx'
 import AccordianDiv from '../Components/Accordian.jsx'
 import {
 	Grommet,
@@ -61,7 +61,6 @@ const App = () => {
 							direction='column'
 							flex='grow'
 							overflow={{ horizontal: 'hidden' }}
-							flex
 							align='center'
 							justify='top'>
 							<Heading>Know Your Vote</Heading>

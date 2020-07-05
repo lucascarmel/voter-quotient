@@ -10,10 +10,10 @@ const FooterDiv = () => {
 			justify='center'
 			border='top'
 			background={{ dark: 'black', light: 'white' }}>
-			<p>A collaboration of</p>
-			<img src={voteLogo} alt='Vote For Astra' width='45' />
-			<p>and</p>
-			<img src={colanderLogo} alt='Colander World' width='42' />
+			{/* <p>A collaboration of</p> */}
+			<img src={voteLogo} alt='Vote For Astra' width='35' />
+			{/* <p>and</p> */}
+			<img src={colanderLogo} alt='Colander World' width='33' />
 		</Footer>
 	)
 }

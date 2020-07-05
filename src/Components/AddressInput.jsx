@@ -89,8 +89,7 @@ const AddressInput = () => {
 				value={value}
 				onChange={handleInput}
 				placeholder='type your address'
-				style={{ border: 'none', width: '500px' }}
-				width='500px'
+				style={{ border: 'none' }}
 			/>
 			<ComboboxPopover>
 				{status === 'OK' && status.length > 0 ? (

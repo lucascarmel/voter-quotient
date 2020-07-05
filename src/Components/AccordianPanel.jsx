@@ -2,6 +2,7 @@ import React from 'react'
 import { AccordionPanel, Box, Avatar, Text, Paragraph } from 'grommet'
 import EliPlay from '../Icons/eli-fun.jpg'
 import EliWork from '../Icons/eli-serious.jpg'
+import EndorsementsDiv from './Endorsements'
 
 const AccordianPanelDiv = () => {
 	return (
@@ -9,20 +10,13 @@ const AccordianPanelDiv = () => {
 			<Box direction='row' pad='small'>
 				<Box basis='1/2' alignSelf='start' pad='xsmall'>
 					<Box align='center' direction='row' gap='small'>
-						<Avatar src={EliWork} />
+						<Avatar size='medium' src={EliWork} />
 						<Text>Steve Marshall</Text>
 					</Box>
 					<Paragraph>
 						Steve Marshall is a <b>certified jerk</b> of <b>65</b> years.
 					</Paragraph>
-					<Box direction='row'>
-						<Avatar hoverIndicator='true' size='small' background='orange' />
-						<Avatar size='small' background='orange' />
-						<Avatar size='small' background='orange' />
-						<Avatar size='small' background='orange' />
-						<Avatar size='small' background='orange' />
-						<Avatar size='small' background='orange' />
-					</Box>
+					<EndorsementsDiv />
 				</Box>
 				<Box basis='1/2' alignSelf='start' pad='xsmall'>
 					<Box align='center' direction='row' gap='small'>
