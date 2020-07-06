@@ -1,8 +1,10 @@
 import React from 'react'
 import FooterDiv from '../Components/Footer.jsx'
-import HeaderDiv from '../Components/Header.jsx'
+// import HeaderDiv from '../Components/Header.jsx'
 // import SocialDiv from '../Components/Social.jsx'
 import AccordianDiv from '../Components/Accordian.jsx'
+import AddressInput from '../Components/AddressInput.jsx'
+
 import {
 	Grommet,
 	Box,
@@ -33,6 +35,10 @@ const theme = {
 		border: {
 			side: 'top',
 		},
+		icons: {
+			collapse: null,
+			expand: null,
+		},
 	},
 	Heading: {
 		font: {
@@ -56,14 +62,16 @@ const App = () => {
 			<ResponsiveContext.Consumer>
 				{(size) => (
 					<Main fill={true}>
-						<HeaderDiv />
+						{/* <HeaderDiv /> */}
 						<Box
 							direction='column'
 							flex='grow'
 							overflow={{ horizontal: 'hidden' }}
 							align='center'
 							justify='top'>
-							<Heading>Know Your Vote</Heading>
+							<Heading>
+								<AddressInput />
+							</Heading>
 							<AccordianDiv />
 							{/* <Lookup /> */}
 							{/* <PlacesAutocomplete /> */}

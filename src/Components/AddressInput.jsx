@@ -1,4 +1,5 @@
 import React, { useContext } from 'react' // KeyboardEvent
+import styled from 'styled-components'
 import usePlacesAutocomplete, {
 	getGeocode,
 	getLatLng,
@@ -15,6 +16,26 @@ import {
 import '@reach/combobox/styles.css'
 
 import { Context } from '../Contexts/LatLng'
+
+const StyledComboboxPopover = styled(ComboboxPopover)`
+	font-size: 1em;
+
+	@media screen and (max-width: 600px) {
+		font-size: 1em;
+	}
+`
+const StyledComboboxInput = styled(ComboboxInput)`
+	font-size: 1em;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	border-bottom: 1px solid black;
+	margin-bottom: 0.5em;
+
+	:focus {
+		outline: none;
+	}
+`
 
 const AddressInput = () => {
 	const { setLatlng } = useContext(Context)
@@ -85,15 +106,18 @@ const AddressInput = () => {
 
 	return (
 		<Combobox onSelect={handleSelect} ref={ref}>
-			<ComboboxInput
+			<StyledComboboxInput
 				value={value}
 				onChange={handleInput}
 				placeholder='type your address'
-				style={{ border: 'none' }}
 			/>
-			<ComboboxPopover>
+			<StyledComboboxPopover>
 				{status === 'OK' && status.length > 0 ? (
-					<ComboboxList persistSelection>{renderSuggestions()} </ComboboxList>
+					<ComboboxList
+						style={{ fontFamily: 'IBM Plex Mono' }}
+						persistSelection>
+						{renderSuggestions()}{' '}
+					</ComboboxList>
 				) : (
 					<p
 						style={{
@@ -107,7 +131,7 @@ const AddressInput = () => {
 						&nbsp;&nbsp;We couldn't find that address! Please try another.
 					</p>
 				)}
-			</ComboboxPopover>
+			</StyledComboboxPopover>
 		</Combobox>
 	)
 }
