@@ -35,28 +35,27 @@ const AccordianPanelOne = () => {
 						<Text>Rebecca Scibona</Text>
 					</Box>
 					<Paragraph>
-						Scibona is the <b>incumbent</b> of <b>40</b> years.
+						Scibona is the <b>incumbent</b> of <b>15</b> years.
 					</Paragraph>
 					<EndorsementsDiv />
 				</Box>
 				<Box basis='1/2' alignSelf='start' pad='xsmall'>
 					<Box align='center' direction='row' gap='small'>
 						<Avatar src={EliPlay} border={{ color: 'blue', size: 'small' }} />
-						<Text>Charles Dingus</Text>
+						<Text>Charles C. Flaugherty</Text>
 					</Box>
 					<Paragraph>
 						{/* Put latest experience, always incumbent, and length of time held */}
-						Dingus is a <b>trial lawyer</b> of <b>15</b> years.
+						Flaugherty is a <b>trial lawyer</b> of <b>6</b> years.
 					</Paragraph>
 				</Box>
 			</Box>
 			<Box basis='full' pad='xsmall' margin={{ bottom: '1em' }}>
-				Alabama Attorney General is a great position for people who really want
-				to make a difference and do other cool things like drink coffee and make
-				laws and help people and other things I guess ok. You can also do things
-				like ride your bike and take your mom for a walk, but during the
-				Covid-19 pandeimc, you should stay at least six feat away from her while
-				you do that!
+				The Attorney General of the State of Colorado is the chief legal officer
+				for the state of Colorado and the head of the Colorado Department of
+				Law, a principal department of the Colorado state government. It is an
+				elected position with a four-year term, and follows the same schedule as
+				election of the governor.
 			</Box>
 		</AccordionPanel>
 	)
