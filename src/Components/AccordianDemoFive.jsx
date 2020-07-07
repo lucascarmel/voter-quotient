@@ -3,6 +3,8 @@ import { AccordionPanel, Box, Avatar, Text, Paragraph } from 'grommet'
 import EliPlay from '../Icons/eli-fun.jpg'
 import EliWork from '../Icons/eli-serious.jpg'
 import EndorsementsDiv from './Endorsements'
+import KeyEndorsementsDiv from './KeyEndorsements'
+
 import Tag from '../Utils/Tag'
 
 const AccordianPanelFive = () => {
@@ -22,7 +24,7 @@ const AccordianPanelFive = () => {
 					<Box direction='row' align='baseline'>
 						<Tag color='blue'>Birmingham City</Tag>
 						<Text style={{ fontFamily: 'IBM Plex Mono', fontSize: '1em' }}>
-							&nbsp;4,059 votes
+							&nbsp;&nbsp;4,059 votes
 						</Text>
 					</Box>
 				</Box>
@@ -37,6 +39,15 @@ const AccordianPanelFive = () => {
 					<Paragraph>
 						Steve Marshall is a <b>certified jerk</b> of <b>65</b> years.
 					</Paragraph>
+					<Text style={{ fontFamily: 'IBM Plex Mono', fontSize: '1em' }}>
+						<b>Key Endorsements</b>
+					</Text>
+					<KeyEndorsementsDiv />
+					<Text
+						style={{ fontFamily: 'IBM Plex Mono', fontSize: '1em' }}
+						margin={{ top: 'medium' }}>
+						<b>All Endorsements</b>
+					</Text>
 					<EndorsementsDiv />
 				</Box>
 				<Box basis='1/2' alignSelf='start' pad='xsmall'>

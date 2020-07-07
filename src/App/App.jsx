@@ -28,16 +28,15 @@ const theme = {
 		},
 	},
 	accordion: {
-		icons: { color: { dark: 'blue', light: 'orange' } },
+		icons: {
+			collapse: null,
+			expand: null,
+		},
 		heading: {
 			margin: 'small',
 		},
 		border: {
 			side: 'top',
-		},
-		icons: {
-			collapse: null,
-			expand: null,
 		},
 	},
 	Heading: {
@@ -68,7 +67,7 @@ const App = () => {
 							flex='grow'
 							overflow={{ horizontal: 'hidden' }}
 							align='center'
-							justify='top'>
+							justify='start'>
 							<Heading>
 								<AddressInput />
 							</Heading>

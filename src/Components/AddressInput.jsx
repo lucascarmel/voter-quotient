@@ -21,7 +21,7 @@ const StyledComboboxPopover = styled(ComboboxPopover)`
 	font-size: 1em;
 
 	@media screen and (max-width: 600px) {
-		font-size: 1em;
+		font-size: 0.8em;
 	}
 `
 const StyledComboboxInput = styled(ComboboxInput)`
@@ -123,7 +123,7 @@ const AddressInput = () => {
 						style={{
 							margin: 0,
 							color: '#454545',
-							padding: '0.2rem 0.5rem 0.5rem 0.5rem',
+							padding: '0.2rem',
 						}}>
 						<span aria-label='embaressed face emoji' role='img'>
 							😳

@@ -22,7 +22,7 @@ const AccordianPanelFour = () => {
 					<Box direction='row' align='baseline'>
 						<Tag color='green'>Jefferson County</Tag>
 						<Text style={{ fontFamily: 'IBM Plex Mono', fontSize: '1em' }}>
-							&nbsp;7,288 votes
+							&nbsp;&nbsp;7,288 votes
 						</Text>
 					</Box>
 				</Box>
