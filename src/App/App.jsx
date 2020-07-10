@@ -1,9 +1,9 @@
-import React from 'react'
-import FooterDiv from '../Components/Footer.jsx'
-// import HeaderDiv from '../Components/Header.jsx'
-// import SocialDiv from '../Components/Social.jsx'
-import AccordianDiv from '../Components/Accordian.jsx'
-import AddressInput from '../Components/AddressInput.jsx'
+import React, { useState } from 'react'
+import FooterDiv from '../Components/Footer'
+import AddressInput from '../Components/AddressInput'
+// import HeaderDiv from '../Components/Header'
+// import SocialDiv from '../Components/Social'
+import { Response } from '../Components/Response'
 
 import {
 	Grommet,
@@ -13,13 +13,14 @@ import {
 	Heading,
 	// Layer,
 } from 'grommet'
+import { DummyData } from '../Components/DummyData'
 
 // import VoteTheme from '../Utils/voteTheme.json'
 
 const theme = {
 	global: {
 		colors: {
-			brand: 'Orange',
+			brand: 'Black',
 		},
 		font: {
 			family: 'Helvetica',
@@ -71,7 +72,7 @@ const App = () => {
 							<Heading>
 								<AddressInput />
 							</Heading>
-							<AccordianDiv />
+							<Response data={DummyData} />
 							{/* <Lookup /> */}
 							{/* <PlacesAutocomplete /> */}
 							{/* <SocialDiv /> */}
