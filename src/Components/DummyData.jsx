@@ -16,16 +16,17 @@ export const DummyData = [
 	{
 		// First Position
 		positionName: 'Governor',
-		positionDescription: 'Hello',
-		division: 'Hello',
+		positionDescription:
+			'The Governor of Colorado is the chief executive of the U.S. state of Colorado. The governor is the head of the executive branch of Colorado state government and is charged with enforcing state laws. The governor has the power to either approve or veto bills passed by the Colorado General Assembly, to convene the legislature, and to grant pardons, except in cases of treason or impeachment. The governor is also the commander-in-chief of the state military forces.',
+		division: 'Colorado',
 		divisionColor: 'green', // colors should always be lowercase
 		voteMargin: '123,456',
 		candidateArray: [
 			// First Candidate
 			{
-				candidateName: 'Me',
+				candidateName: 'Charles Fauci',
 				candidateParty: 'Democrat',
-				candidatePhoto: EliPlay,
+				candidatePhoto: Barry,
 				candidateOccupation: 'Incumbent',
 				candidateTenure: 23,
 				endorsements: [
@@ -66,33 +67,33 @@ export const DummyData = [
 			},
 		],
 	},
-	// {
-	// 	// Second Position
-	// 	positionName: '',
-	// 	positionDescription: '',
-	// 	division: '',
-	// 	divisionColor: '',
-	// 	voteMargin: '', // vote margin should be in quotes because of the comma, i.e. '123,456'
-	// 	candidateArray: [
-	// 		{
-	// 			candidateName: '',
-	// 			candidateParty: '',
-	// 			candidatePhoto: '',
-	// 			endorsements: [
-	// 				{
-	// 					Group: 'National Rifle Association',
-	// 					Color: 'red',
-	// 					Logo: null,
-	// 					KeyEndorsement: false,
-	// 				},
-	// 				{
-	// 					Group: 'Color of Change',
-	// 					Color: 'green',
-	// 					Logo: null,
-	// 					KeyEndorsement: true,
-	// 				},
-	// 			],
-	// 		},
-	// 	],
-	// },
+	{
+		// Second Position
+		positionName: '',
+		positionDescription: '',
+		division: '',
+		divisionColor: '',
+		voteMargin: '', // vote margin should be in quotes because of the comma, i.e. '123,456'
+		candidateArray: [
+			{
+				candidateName: '',
+				candidateParty: '',
+				candidatePhoto: '',
+				endorsements: [
+					{
+						Group: 'National Rifle Association',
+						Color: 'red',
+						Logo: null,
+						KeyEndorsement: false,
+					},
+					{
+						Group: 'Color of Change',
+						Color: 'green',
+						Logo: null,
+						KeyEndorsement: true,
+					},
+				],
+			},
+		],
+	},
 ]

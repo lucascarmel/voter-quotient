@@ -1,9 +1,9 @@
 import React from 'react'
 import { AccordionPanel, Box, Text, ResponsiveContext } from 'grommet'
-import { Candidate } from './Candidates'
+import Candidate from './Candidate'
 import Tag from '../Utils/Tag'
 
-export const Position = ({
+export default ({
 	positionName,
 	positionDescription,
 	division,

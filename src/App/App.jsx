@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import FooterDiv from '../Components/Footer'
 import AddressInput from '../Components/AddressInput'
 // import HeaderDiv from '../Components/Header'
-// import SocialDiv from '../Components/Social'
+import TakeAction from '../Components/TakeAction'
 import { Response } from '../Components/Response'
 
 import {
@@ -11,8 +11,11 @@ import {
 	ResponsiveContext,
 	Main,
 	Heading,
+	Button,
 	// Layer,
 } from 'grommet'
+import { LocationPin, Location } from 'grommet-icons'
+
 import { DummyData } from '../Components/DummyData'
 
 // import VoteTheme from '../Utils/voteTheme.json'
@@ -62,7 +65,6 @@ const App = () => {
 			<ResponsiveContext.Consumer>
 				{(size) => (
 					<Main fill={true}>
-						{/* <HeaderDiv /> */}
 						<Box
 							direction='column'
 							flex='grow'
@@ -70,12 +72,18 @@ const App = () => {
 							align='center'
 							justify='start'>
 							<Heading>
-								<AddressInput />
+								{size === 'small' ? (
+									<Button
+										primary
+										label='Use Current Location'
+										icon={<Location />}
+									/>
+								) : (
+									<AddressInput />
+								)}
 							</Heading>
 							<Response data={DummyData} />
-							{/* <Lookup /> */}
-							{/* <PlacesAutocomplete /> */}
-							{/* <SocialDiv /> */}
+							<TakeAction />
 						</Box>
 						<FooterDiv />
 					</Main>

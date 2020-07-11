@@ -12,7 +12,7 @@ const getPartyColor = (party) => {
 	}
 }
 
-export const Candidate = ({
+export default ({
 	name,
 	party,
 	photo,

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Accordion } from 'grommet'
-import { Position } from './Positions'
+import Position from './Position'
 
 export const Response = ({ data }) => {
 	const sortedPositions = data.map(
