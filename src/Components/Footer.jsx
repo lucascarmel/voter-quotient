@@ -2,6 +2,7 @@ import React from 'react'
 import voteLogo from '../Icons/v4a_head-1.jpg'
 import colanderLogo from '../Icons/tinhat_america.png'
 import { Footer, Box, Text, Avatar, Anchor } from 'grommet'
+// import { Router, Link } from '@reach/router'
 
 const FooterDiv = () => {
 	return (
@@ -11,16 +12,22 @@ const FooterDiv = () => {
 			border='top'
 			background={{ dark: 'black', light: 'white' }}>
 			<Box>
-				<Anchor to='/' style={{ fontSize: '1em', lineHeight: '1.3em' }}>
+				<Anchor href='/' style={{ fontSize: '1.2em', lineHeight: '1.3em' }}>
 					Home
 				</Anchor>
-				<Anchor to='/' style={{ fontSize: '1em', lineHeight: '1.3em' }}>
+				<Anchor
+					href='about'
+					style={{ fontSize: '1.2em', lineHeight: '1.3em', fontWeight: 400 }}>
 					About
 				</Anchor>
-				<Anchor to='/' style={{ fontSize: '1em', lineHeight: '1.3em' }}>
+				<Anchor
+					href='methods'
+					style={{ fontSize: '1.2em', lineHeight: '1.3em', fontWeight: 400 }}>
 					Methods
 				</Anchor>
-				<Anchor to='/' style={{ fontSize: '1em', lineHeight: '1.3em' }}>
+				<Anchor
+					href='contact'
+					style={{ fontSize: '1.2em', lineHeight: '1.3em', fontWeight: 400 }}>
 					Contact
 				</Anchor>
 			</Box>
@@ -28,7 +35,7 @@ const FooterDiv = () => {
 				<Text>A collaboration of</Text>
 				<Avatar src={voteLogo} size='50px' alt='Vote For Astra' />
 				<Text>and</Text>
-				<Avatar src={colanderLogo} size='47px' alt='Colander World' />
+				<Avatar src={colanderLogo} size='45px' alt='Colander World' />
 			</Box>
 		</Footer>
 	)

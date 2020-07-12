@@ -11,7 +11,6 @@ const fetcher = (url) =>
 		.then((txt) => console.log(txt))
 
 const useBallotReady = ({ lat, lng }) => {
-	// const { latlng } = useContext(Context)
 	const { data, error } = useSWR(
 		`https://api.civicengine.com/positions?` +
 			`lat=${lat}&` +

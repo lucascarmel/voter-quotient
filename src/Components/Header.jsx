@@ -1,8 +1,7 @@
 import React, { useContext } from 'react'
-import { Header } from 'grommet'
-// import {  } from 'grommet-icons'
-
 import { Context } from '../Contexts/LatLng'
+import { Header } from 'grommet'
+// import AddressInput from '../Components/AddressInput.jsx'
 
 const HeaderDiv = () => {
 	const { latlng } = useContext(Context)
