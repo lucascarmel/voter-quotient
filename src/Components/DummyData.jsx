@@ -8,8 +8,8 @@ REFERENCE (each of these elements can be repeated infinitely)
     - Candidates
         - Endorsements
 */
-import EliPlay from '../Icons/eli-fun.jpg'
-import EliWork from '../Icons/eli-serious.jpg'
+// import EliPlay from '../Icons/eli-fun.jpg'
+// import EliWork from '../Icons/eli-serious.jpg'
 import Barry from '../Icons/barry.jpg'
 
 export const DummyData = [

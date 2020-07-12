@@ -10,7 +10,7 @@ const HeaderDiv = () => {
 	return (
 		<Header
 			pad='small'
-			justify='left'
+			justify='start'
 			border='bottom'
 			background={{ dark: 'black', light: 'white' }}>
 			<b>Your Address:</b>
