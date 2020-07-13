@@ -12,17 +12,17 @@ export const KeyEndorsements = ({ endorsementsArray }) => {
 	const FilteredEndorsements = endorsementsArray.map(
 		({ Group, Color, Logo, KeyEndorsement }) =>
 			// Key Endorsements is TRUE
-			KeyEndorsement ? (
+			KeyEndorsement && (
 				<Avatar
 					key={Group} // Use proper key signature once learned
 					size='42px'
 					background={Color}
 					border={true}
 					margin={{ horizontal: '2px', vertical: '1px' }}
-					src={Logo !== null ? Logo : null}>
-					{Logo === null ? getInitials(Group) : null}
+					src={Logo !== null && Logo}>
+					{Logo === null && getInitials(Group)}
 				</Avatar>
-			) : null
+			)
 	)
 	return (
 		<Box direction='row' wrap={true} margin={{ left: '-2px' }}>
@@ -35,7 +35,7 @@ export const OtherEndorsements = ({ endorsementsArray }) => {
 	const FilteredEndorsements = endorsementsArray.map(
 		({ Group, Color, KeyEndorsement }) =>
 			// Key Endorsements is FALSE
-			!KeyEndorsement ? (
+			!KeyEndorsement && (
 				<Avatar
 					key={Group} // Use proper key signature once learned
 					size='32px'
@@ -45,7 +45,7 @@ export const OtherEndorsements = ({ endorsementsArray }) => {
 					<Text style={{ fontSize: '0.9em' }}></Text>
 					{getInitials(Group)}
 				</Avatar>
-			) : null
+			)
 	)
 
 	return (

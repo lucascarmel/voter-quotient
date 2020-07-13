@@ -3,7 +3,7 @@ import { Context } from '../Contexts/LatLng'
 import { Header } from 'grommet'
 // import AddressInput from '../Components/AddressInput.jsx'
 
-const HeaderDiv = () => {
+export default HeaderDiv = () => {
 	const { latlng } = useContext(Context)
 
 	return (
@@ -19,4 +19,3 @@ const HeaderDiv = () => {
 		</Header>
 	)
 }
-export default HeaderDiv

@@ -23,6 +23,8 @@ const StyledComboboxPopover = styled(ComboboxPopover)`
 	padding: 2px;
 	font-size: 1.5em;
 	line-height: 1.2em;
+	max-width: 544px;
+	/* overflow-x: hidden; */
 `
 
 const StyledComboboxInput = styled(ComboboxInput)`
@@ -47,6 +49,7 @@ const AddressInput = (address) => {
 		clearSuggestions,
 	} = usePlacesAutocomplete({
 		requestOptions: {
+			componentRestrictions: { country: 'us' },
 			/* Define search scope here */
 		},
 		debounce: 200,
@@ -100,7 +103,7 @@ const AddressInput = (address) => {
 					key={id}
 					onClick={handleSelect(suggestion)}
 					value={main_text + ' ' + secondary_text}
-					style={{ overflow: 'hidden' }}
+					style={{ overflow: 'scroll' }}
 				/>
 			)
 		})
@@ -109,7 +112,7 @@ const AddressInput = (address) => {
 		<ResponsiveContext.Consumer>
 			{(size) => (
 				<Combobox onSelect={handleSelect} ref={ref}>
-					<Box width='large'>
+					<Box width='550px'>
 						<StyledComboboxInput
 							value={value}
 							onChange={handleInput}
@@ -118,7 +121,10 @@ const AddressInput = (address) => {
 					</Box>
 					<StyledComboboxPopover portal={false}>
 						{status === 'OK' && status.length > 0 ? (
-							<ComboboxList>{renderSuggestions()}</ComboboxList>
+							<ComboboxList
+								style={{ whiteSpace: 'nowrap', overflow: 'scroll' }}>
+								{renderSuggestions()}
+							</ComboboxList>
 						) : (
 							<ComboboxList>
 								<ComboboxOption

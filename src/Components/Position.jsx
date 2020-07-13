@@ -41,7 +41,7 @@ export default ({
 					pad={{ top: 'small', bottom: '2px' }}
 					label={
 						<Box
-							margin={size === 'small' ? { horizontal: 'small' } : null}
+							margin={size === 'small' && { horizontal: 'small' }}
 							direction='row'
 							gap='xsmall'
 							justify='between'

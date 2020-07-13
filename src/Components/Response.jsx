@@ -3,7 +3,9 @@ import { Accordion } from 'grommet'
 import Position from './Position'
 import useSWR from 'swr'
 import fetch from 'unfetch'
-import { ballotReadyKeyLudo, ballotReadyKeyAstra } from '../Utils/apiKeys'
+
+// import { ballotReadyKeyLudo } from '../Utils/apiKeys'
+import { ballotReadyKeyAstra } from '../Utils/apiKeys'
 import criminalJusticePositions from '../Utils/criminalJusticePositions.json'
 import moment from 'moment'
 import { Heading } from 'grommet'
@@ -13,7 +15,7 @@ const fetcher = (url) =>
 		headers: { 'x-api-key': ballotReadyKeyAstra },
 	}).then((res) => res.json())
 
-export default Response = ({ lat, lng }) => {
+export const Response = ({ lat, lng }) => {
 	const { data, error } = useSWR(
 		`https://api.civicengine.com/positions?` +
 			`lat=${lat}&` +

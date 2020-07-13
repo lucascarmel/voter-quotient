@@ -1,12 +1,15 @@
 {
 	"global": {
 		"colors": {
-			"brand": "Black"
+			"brand": "#FFE91D",
+			"text": "Black",
+			"icon": "Black"
 		},
 		"font": {
 			"family": "Helvetica",
 			"size": "14px",
-			"height": "16px"
+			"height": "16px",
+			"color": "white"
 		}
 	},
 	"accordion": {
