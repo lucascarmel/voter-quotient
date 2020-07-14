@@ -1,43 +1,26 @@
-import React from 'react'
-import styled from 'styled-components'
-import logo from './Icons/map-marker-alt-solid.svg'
+import React, { useContext } from 'react'
+import { usePosition } from 'use-position'
+import { Button } from 'grommet'
+import { Location } from 'grommet-icons'
+import { Context } from '../Contexts/LatLng'
 
-const Button = styled.button`
-	background-color: white;
-	font-size: 1em;
-	padding: 0.25em 1em;
-	border: 2px solid black;
-	border-radius: 3px;
+export default () => {
+	const { setLatlng } = useContext(Context)
 
-	:hover {
-		background-color: #c3c3c3;
-	}
-`
-
-const Lookup = () => {
-	navigator.geolocation.getCurrentPosition(function (position) {
-		console.log('Latitude is :', position.coords.latitude)
-		console.log('Longitude is :', position.coords.longitude)
+	const { latitude, longitude, error } = usePosition({
+		enableHighAccuracy: true,
 	})
 
-	const renderLoc = () => {
-		return (
-			<h2>
-				{('Latitude is :', this.position.coords.latitude)}
-				<br />
-				{('Longitude is :', this.position.coords.longitude)}
-			</h2>
-		)
-	}
-
 	return (
-		<div>
-			<Button onClick={(Lookup, renderLoc)}>
-				Use Current Location{' '}
-				<img src={logo} alt='Logo' width='20' height='20' />
-			</Button>
-		</div>
+		<Button
+			primary
+			size='large'
+			label='Find My Ballot'
+			icon={<Location />}
+			onClick={() => {
+				!error && console.log(`📍${latitude}, ${longitude}`)
+				setLatlng({ latitude, longitude })
+			}}
+		/>
 	)
 }
-
-export default Lookup

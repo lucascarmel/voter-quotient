@@ -18,29 +18,7 @@ import { ResponsiveContext, Box } from 'grommet'
 import { Context } from '../Contexts/LatLng'
 import { navigate } from '@reach/router'
 
-const StyledComboboxPopover = styled(ComboboxPopover)`
-	/* font-family: 'IBM Plex Mono'; */
-	padding: 2px;
-	font-size: 1.5em;
-	line-height: 1.2em;
-	max-width: 544px;
-	/* overflow-x: hidden; */
-`
-
-const StyledComboboxInput = styled(ComboboxInput)`
-	margin-top: 2em;
-	font-size: 2em;
-	border: 0;
-	outline: 0;
-	background: transparent;
-	border-bottom: 1px solid black;
-
-	:focus {
-		outline: none;
-	}
-`
-
-const AddressInput = (address) => {
+export default (address) => {
 	const { setLatlng } = useContext(Context)
 	const {
 		value,
@@ -56,7 +34,8 @@ const AddressInput = (address) => {
 	})
 
 	const ref = useOnclickOutside(() => {
-		// When user clicks outside of the component, we can dismiss the searched suggestions by calling this method
+		// When user clicks outside of the component,
+		// we can dismiss the searched suggestions by calling this method
 		clearSuggestions()
 	})
 
@@ -64,12 +43,6 @@ const AddressInput = (address) => {
 		// Update the keyword of the input element
 		setValue(e.target.value)
 	}
-
-	// const checkEnter = (e, suggestion) => {
-	// 	if (e.charCode === 13) {
-	// 		handleSelect(suggestion)
-	// 	}
-	// }
 
 	const handleSelect = ({ description }) => () => {
 		// When user selects a place, we can replace the keyword without request data from API
@@ -146,4 +119,24 @@ const AddressInput = (address) => {
 	)
 }
 
-export default AddressInput
+const StyledComboboxPopover = styled(ComboboxPopover)`
+	/* font-family: 'IBM Plex Mono'; */
+	padding: 2px;
+	font-size: 1.5em;
+	line-height: 1.2em;
+	max-width: 544px;
+	/* overflow-x: hidden; */
+`
+
+const StyledComboboxInput = styled(ComboboxInput)`
+	margin-top: 2em;
+	font-size: 2em;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	border-bottom: 1px solid black;
+
+	:focus {
+		outline: none;
+	}
+`

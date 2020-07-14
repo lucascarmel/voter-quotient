@@ -2,7 +2,8 @@ import React, { useContext } from 'react'
 import { Box, Heading, Button, ResponsiveContext } from 'grommet'
 import AddressInput from '../Components/AddressInput'
 import { Response } from '../Components/Response'
-import { Location } from 'grommet-icons'
+import LocationInput from '../Components/LocationInput'
+
 import { Context } from '../Contexts/LatLng'
 import { Router } from '@reach/router'
 
@@ -27,17 +28,12 @@ const Home = () => {
 							lineHeight: '1em',
 							letterSpacing: '-2px',
 						}}>
-						Dont Wait — Vote
+						Dont Wait{' '}
+						<span style={{ display: size === 'small' && 'none' }}>—</span> Vote
 					</Heading>
 					<Router>
 						{size === 'small' ? (
-							<Button
-								path='/'
-								primary
-								size='large'
-								label='Find My Ballot'
-								icon={<Location />}
-							/>
+							<LocationInput path='/' />
 						) : (
 							<AddressInput path='/' />
 						)}

@@ -42,28 +42,56 @@ const FooterDiv = () => {
 							Methods
 						</Anchor>
 						<Anchor
-							href='contact'
+							href='PUT-SURVEY-LINK-HERE'
 							color='Black'
 							style={{
 								fontSize: '1.3em',
 								lineHeight: '1.3em',
 								fontWeight: 400,
 							}}>
-							Contact
+							Survey
 						</Anchor>
 					</Box>
-					<Box direction={size === 'small' && 'column'} gap='small'>
-						<Button
+					<Box direction={size === 'small' ? 'column' : 'row'} gap='small'>
+						{/* <Button
 							size={size === 'small' ? 'medium' : 'large'}
-							label='Survey'></Button>
-						<Button
+							label='Survey'
+						/> */}
+						<form
+							action='https://www.paypal.com/cgi-bin/webscr'
+							method='post'
+							target='_top'>
+							<input type='hidden' name='cmd' value='_s-xclick' />
+							<input
+								type='hidden'
+								name='hosted_button_id'
+								value='HYXH5AQF472ML'
+							/>
+							<input
+								type='image'
+								src='https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif'
+								border='0'
+								name='submit'
+								title='PayPal - The safer, easier way to pay online!'
+								alt='Donate with PayPal button'
+							/>
+							<img
+								alt=''
+								border='0'
+								src='https://www.paypal.com/en_US/i/scr/pixel.gif'
+								width='1'
+								height='1'
+							/>
+						</form>
+						{/* <Button
 							primary
 							size={size === 'small' ? 'medium' : 'large'}
-							label='Donate'></Button>
+							label='Donate'
+						/> */}
 					</Box>
 					<Box direction='column' align='center' gap='small'>
 						<Box
-							direction={size === 'small' && 'column'}
+							direction={size === 'small' ? 'column' : 'row'}
 							align='center'
 							gap='small'>
 							<Avatar
