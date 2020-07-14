@@ -1,6 +1,6 @@
-# Vote 4 Change
+# Don't Wait — Vote
 
-_Vote 4 Change_ is a criminal justice ballot guide that holds politicians accountable.
+_Don't Wait — Vote_ is a criminal justice ballot guide that holds politicians accountable.
 
 ## Project Structure
 
@@ -9,7 +9,7 @@ _Vote 4 Change_ is a criminal justice ballot guide that holds politicians accoun
 ├── public/
 │   ├── index.html
 │   ├── favicon.ico
-│   ├── apiKeys.json
+│   ├── apiKeys.js
 │   ├── manifest.json
 │   ├── robots.txt
 |   └── ...
@@ -34,95 +34,89 @@ _Vote 4 Change_ is a criminal justice ballot guide that holds politicians accoun
 
 ## Development
 
-_Make sure to familiarize yourself with these tools before contributing._
+### [Prototyping Notebook](https://observablehq.com/@elibenton/ballotready-api)
 
-### 📚 The Stack
+_Please check this [Observable Notebook](https://observablehq.com/@elibenton/ballotready-api) before going any further! It contains everything you need to know about how this web is going to work!_
 
-- [React](https://reactjs.org/) for our front-end.
-- [Axios](https://github.com/axios/axios) for making API calls.
-- [Styled Components](https://styled-components.com/) for styling components.
-- [D3 Array](https://github.com/d3/d3-array) for manipulating the API response.
+### 📚 Tools & :pirate_flag: Hooks
 
-### 🏴‍☠️ The Hooks
+_This web app uses [Custom Hooks](https://reactjs.org/docs/hooks-custom.html). No classes here!_
 
-- This web app uses [Custom Hooks](https://reactjs.org/docs/hooks-custom.html). No classes here! He
-  - [usePlacesAutocomplete](https://github.com/wellyshen/use-places-autocomplete) by Welly Shen. Welly's feature rich Hook for the Google Maps API is easy to use and saves money!
-  - [SWR](https://github.com/vercel/swr) by Vercel. Short for `stale-while-revalidate`, SWR is the easiest way to fetch data in React.
+- [React](https://reactjs.org/) for declarative and functional UI.
+- [SWR](https://swr.vercel.app/) for automatic and reactive data fetching.
+- [Grommet.io](https://v2.grommet.io/components) for painless responsive layout and global theming.
+- [usePlacesAutocomplete](https://github.com/wellyshen/use-places-autocomplete) by Welly Shen. Welly's Hook for the Google Maps API is easy to use and saves money!
+- [useusePosition](https://github.com/trekhleb/use-position) by Oleksii Trekhleb. Oleksii's Hook is simple to use and allows for high accuracy geolocation!
+- _useLocationStorage_
 
-### Web API's
+### 🗄 The Data
 
-<!-- TODO: add api instructions -->
+#### BallotReady API
+
+[Their documenation](https://developers.civicengine.com/docs/api)
+
+#### Google Civic Info API
+
+[Their reference](https://developers.google.com/civic-information/docs/v2)
+
+#### MIT Election Lab
+
+[Their data](https://electionlab.mit.edu/data)
 
 ## Demployment
 
-<!-- TODO: add deployment instructions -->
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e8e24797-a3f1-4190-9ea1-03f3ecf72326/deploy-status)](https://app.netlify.com/sites/vote4change/deploys)
 
-Netlify!
+This web app is deployed with [Netlify](https://www.netlify.com/) and utilizes some of their best features:
+
+- [Continuous Deployment](https://www.netlify.com/products/build/)
+- [Edge CDN](https://www.netlify.com/products/edge/)
+- [Server-Side Analytics](https://www.netlify.com/products/analytics/)
+- [Automatic TLS by Let’s Encrypt](https://docs.netlify.com/domains-https/https-ssl/)
 
 ## Example component
 
 The general structure of a component in this codebase looks like this:
 
 ```jsx
-import React from 'react'
-// ... more imports ....
+import React, {useContext } from 'react'
+// ... more imports ...
 
-const StyledComponent = styled(component)
-
-const functionName = (props go here) => {
-  // ... component logic with react hooks ....
+export default (props go here) => {
+  // ... component logic with react hooks ...
 
   return (
-    <div>
-      <Styled Component/>
-    </div>
+    <Box>
+      <StyledComponent/>
+    </Box>
   )
 }
+
+// often there is no need for styled components
+const StyledComponent = styled(component)`
+  font-size: 1em;
+`
+
 ```
 
 ## Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-### Available Scripts
-
-In the project directory, you can run:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). You can learn more in the [documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 #### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 #### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 #### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Builds the app for production to the `build` folder. Your app is ready to be deployed! See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 #### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Note:** _This is a one-way operation. Once you `eject`, you can’t go back!_
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-### Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
