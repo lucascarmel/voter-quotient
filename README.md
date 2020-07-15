@@ -36,18 +36,44 @@ _Don't Wait — Vote_ is a criminal justice ballot guide that holds politicians 
 
 ### [Prototyping Notebook](https://observablehq.com/@elibenton/ballotready-api)
 
-_Please check this [Observable Notebook](https://observablehq.com/@elibenton/ballotready-api) before going any further! It contains everything you need to know about how this web is going to work!_
+_Please check this [Observable Notebook](https://observablehq.com/@elibenton/ballotready-api) before going any further! It contains everything you need to know about how this web app is going to work!_
 
-### 📚 Tools & :pirate_flag: Hooks
+### Getting Started
+
+1. Clone the repo
+
+`git clone _________`
+
+2. Add all the dependencies
+
+`cd voter-quotient`
+
+then
+
+`yarn` or `npm install -g`
+
+3. Run the development server
+
+`yarn start`
+
+_**Note:** I use VSCode because of it's wonderful web dev autocomplete and Git integration. I also recommend a few super helpful plugins!_
+
+- **Prettier** to "format on save" and keep my code looking consistent
+- **Git Graph** because I need to visualize git branches
+- **Emmet** for powerful snippets and smart code wrapping
+- **[FiraCode](https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions)** for it's font ligature support
+
+### 📚 Tools & ⚓️ Hooks
 
 _This web app uses [Custom Hooks](https://reactjs.org/docs/hooks-custom.html). No classes here!_
 
 - [React](https://reactjs.org/) for declarative and functional UI.
 - [SWR](https://swr.vercel.app/) for automatic and reactive data fetching.
 - [Grommet.io](https://v2.grommet.io/components) for painless responsive layout and global theming.
+- [Reach Router](https://reach.tech/router) for lightweight and simple routing.
 - [usePlacesAutocomplete](https://github.com/wellyshen/use-places-autocomplete) by Welly Shen. Welly's Hook for the Google Maps API is easy to use and saves money!
-- [useusePosition](https://github.com/trekhleb/use-position) by Oleksii Trekhleb. Oleksii's Hook is simple to use and allows for high accuracy geolocation!
-- _useLocationStorage_
+- [usePosition](https://github.com/trekhleb/use-position) by Oleksii Trekhleb. Oleksii's Hook is simple to use and allows for high accuracy geolocation!
+- _useLocalStorage_
 
 ### 🗄 The Data
 
@@ -67,16 +93,16 @@ _This web app uses [Custom Hooks](https://reactjs.org/docs/hooks-custom.html). N
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e8e24797-a3f1-4190-9ea1-03f3ecf72326/deploy-status)](https://app.netlify.com/sites/vote4change/deploys)
 
-This web app is deployed with [Netlify](https://www.netlify.com/) and utilizes some of their best features:
+This web app is deployed with [Netlify](https://www.netlify.com/) and utilizes some of their best features.
 
 - [Continuous Deployment](https://www.netlify.com/products/build/)
 - [Edge CDN](https://www.netlify.com/products/edge/)
 - [Server-Side Analytics](https://www.netlify.com/products/analytics/)
 - [Automatic TLS by Let’s Encrypt](https://docs.netlify.com/domains-https/https-ssl/)
 
-## Example component
+## Example Component
 
-The general structure of a component in this codebase looks like this:
+The general structure of a component in this codebase looks like this.
 
 ```jsx
 import React, {useContext } from 'react'
