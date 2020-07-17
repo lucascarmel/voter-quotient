@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box, Avatar, Text, Paragraph, ResponsiveContext } from 'grommet'
+import { User } from 'grommet-icons'
 import { KeyEndorsements, OtherEndorsements } from './Endorsements'
 
 const getPartyColor = (party) => {
@@ -27,13 +28,14 @@ export default ({
 				<Box basis='1/2' alignSelf='start' pad='xsmall'>
 					<Box align='center' direction='row' gap='small'>
 						<Avatar
-							src={photo}
+							src={photo && photo}
 							size='54px'
 							border={{
 								color: getPartyColor(party),
 								size: 'small',
-							}}
-						/>
+							}}>
+							{!photo && <User color={getPartyColor(party)} />}
+						</Avatar>
 						<Text>{name}</Text>
 					</Box>
 					<Paragraph>

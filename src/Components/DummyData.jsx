@@ -21,7 +21,7 @@ export const DummyData = [
 		positionName: 'Position #1',
 		positionDescription:
 			'The Governor of Colorado is the chief executive of the U.S. state of Colorado. The governor is the head of the executive branch of Colorado state government and is charged with enforcing state laws. The governor has the power to either approve or veto bills passed by the Colorado General Assembly, to convene the legislature, and to grant pardons, except in cases of treason or impeachment. The governor is also the commander-in-chief of the state military forces.',
-		division: 'Colorado',
+		division: 'Location #1',
 		divisionColor: 'green', // colors should always be lowercase
 		voteMargin: '123,456', // vote margin should be in quotes because of the comma, i.e. '123,456'
 		candidateArray: [
@@ -29,7 +29,7 @@ export const DummyData = [
 			{
 				candidateName: 'Charles Fauci',
 				candidateParty: 'Democrat',
-				candidatePhoto: Barry,
+				candidatePhoto: Barry, // If you don't want to use your own photo, just write null
 				candidateOccupation: 'Incumbent',
 				candidateTenure: 23,
 				endorsements: [
@@ -51,8 +51,8 @@ export const DummyData = [
 			// Second Candidate
 			{
 				candidateName: 'Candidate #2',
-				candidateParty: '',
-				candidatePhoto: '',
+				candidateParty: 'Republican',
+				candidatePhoto: null,
 				endorsements: [
 					{
 						Group: 'National Rifle Association',
@@ -72,16 +72,16 @@ export const DummyData = [
 	},
 	{
 		// Second Position - You can copy and paste each element infinitely
-		positionName: '',
+		positionName: 'Position #2',
 		positionDescription: '',
-		division: '',
-		divisionColor: '',
-		voteMargin: '',
+		division: 'Location #2',
+		divisionColor: 'blue',
+		voteMargin: '654,321',
 		candidateArray: [
 			{
 				candidateName: '',
 				candidateParty: '',
-				candidatePhoto: '',
+				candidatePhoto: null,
 				endorsements: [
 					{
 						Group: 'National Rifle Association',
