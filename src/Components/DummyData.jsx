@@ -8,6 +8,9 @@ REFERENCE (each of these elements can be repeated infinitely)
     - Candidates
         - Endorsements
 */
+
+// You can import more photos here using the same syntax.
+// But if you leave the photo blank, it will default to a generic avatar icon
 import EliPlay from '../Icons/eli-fun.jpg'
 import EliWork from '../Icons/eli-serious.jpg'
 import Barry from '../Icons/barry.jpg'
@@ -15,12 +18,12 @@ import Barry from '../Icons/barry.jpg'
 export const DummyData = [
 	{
 		// First Position
-		positionName: 'Governor',
+		positionName: 'Position #1',
 		positionDescription:
 			'The Governor of Colorado is the chief executive of the U.S. state of Colorado. The governor is the head of the executive branch of Colorado state government and is charged with enforcing state laws. The governor has the power to either approve or veto bills passed by the Colorado General Assembly, to convene the legislature, and to grant pardons, except in cases of treason or impeachment. The governor is also the commander-in-chief of the state military forces.',
 		division: 'Colorado',
 		divisionColor: 'green', // colors should always be lowercase
-		voteMargin: '123,456',
+		voteMargin: '123,456', // vote margin should be in quotes because of the comma, i.e. '123,456'
 		candidateArray: [
 			// First Candidate
 			{
@@ -47,7 +50,7 @@ export const DummyData = [
 
 			// Second Candidate
 			{
-				candidateName: '',
+				candidateName: 'Candidate #2',
 				candidateParty: '',
 				candidatePhoto: '',
 				endorsements: [
@@ -68,12 +71,12 @@ export const DummyData = [
 		],
 	},
 	{
-		// Second Position
+		// Second Position - You can copy and paste each element infinitely
 		positionName: '',
 		positionDescription: '',
 		division: '',
 		divisionColor: '',
-		voteMargin: '', // vote margin should be in quotes because of the comma, i.e. '123,456'
+		voteMargin: '',
 		candidateArray: [
 			{
 				candidateName: '',
