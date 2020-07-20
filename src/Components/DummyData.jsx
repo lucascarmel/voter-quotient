@@ -18,26 +18,26 @@ import Barry from '../Icons/barry.jpg'
 export const DummyData = [
 	{
 		// First Position
-		positionName: 'Mr. Potato Head!',
+		positionName: 'District Attorney',
 		positionDescription:
-			'The Governor of Colorado is the chief executive of the U.S. state of Colorado. The governor is the head of the executive branch of Colorado state government and is charged with enforcing state laws. The governor has the power to either approve or veto bills passed by the Colorado General Assembly, to convene the legislature, and to grant pardons, except in cases of treason or impeachment. The governor is also the commander-in-chief of the state military forces.',
+			'A Distric Attorney's duties typically include reviewing police arrest reports, deciding whether to bring criminal charges against arrested people, and prosecuting criminal cases in court.',
 		division: 'Location #1',
 		divisionColor: 'green', // colors should always be lowercase
-		voteMargin: '123,456', // vote margin should be in quotes because of the comma, i.e. '123,456'
+		voteMargin: '23,456', // vote margin should be in quotes because of the comma, i.e. '123,456'
 		candidateArray: [
 			// First Candidate
 			{
-				candidateName: 'Charles Fauci',
+				candidateName: 'Larry Krasner',
 				candidateParty: 'Democrat',
-				candidatePhoto: Barry, // If you don't want to use your own photo, just write null
-				candidateOccupation: 'Incumbent',
-				candidateTenure: 23,
+				candidatePhoto: null, // If you don't want to use your own photo, just write null
+				candidateOccupation: 'Criminal Defense Lawyer',
+				candidateTenure: 
 				endorsements: [
 					{
-						Group: 'National Rifle Association',
-						Color: 'red',
+						Group: 'MoveOn.Org',
+						Color: 'blue',
 						Logo: null,
-						KeyEndorsement: false,
+						KeyEndorsement: true,
 					},
 					{
 						Group: 'Color of Change',
@@ -45,12 +45,18 @@ export const DummyData = [
 						Logo: null,
 						KeyEndorsement: true,
 					},
+						{
+						Group: 'Pennsylvania Democratic Party',
+						Color: 'green',
+						Logo: null,
+						KeyEndorsement: false,
+					},
 				],
 			},
 
 			// Second Candidate
 			{
-				candidateName: 'Candidate #2',
+				candidateName: 'Beth Grossman',
 				candidateParty: 'Republican',
 				candidatePhoto: null,
 				endorsements: [
@@ -61,10 +67,10 @@ export const DummyData = [
 						KeyEndorsement: false,
 					},
 					{
-						Group: 'Color of Change',
+						Group: 'Fraternal Order of Transit Police',
 						Color: 'green',
 						Logo: null,
-						KeyEndorsement: true,
+						KeyEndorsement: false,
 					},
 				],
 			},
